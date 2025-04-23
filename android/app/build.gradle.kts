@@ -6,8 +6,8 @@ plugins {
 }
 
 android {
+
     namespace = "com.example.myapp"
-    compileSdk = flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
 
     compileOptions {
@@ -17,6 +17,8 @@ android {
 
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_1_8.toString()
+        compileSdk = flutter.compileSdkVersion
+        ndkVersion = "27.0.12077973"
     }
 
     defaultConfig {

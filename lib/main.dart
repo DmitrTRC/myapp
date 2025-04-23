@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'ui/screens/home_screen.dart';
+
 void main() {
   // Ensure that the Flutter framework is fully initialized.
   WidgetsFlutterBinding.ensureInitialized();
@@ -29,37 +31,8 @@ class MyApp extends StatelessWidget {
           onSecondary: onSecondaryColor,
         ),
         useMaterial3: true,
-        // Customize text themes for consistency throughout the app.
-        textTheme: const TextTheme(
-          headlineLarge: TextStyle(
-              fontSize: 32.0, fontWeight: FontWeight.bold, color: primaryColor),
-          bodyLarge: TextStyle(fontSize: 18.0, color: Colors.black87),
-        ),
       ),
-      home: const MyHomePage(title: 'Patrol Assistant'),
-    );
-  }
-}
-
-class MyHomePage extends StatelessWidget {
-  const MyHomePage({super.key, required this.title});
-  final String title;
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(title),
-        backgroundColor: Theme.of(context).colorScheme.primary,
-        foregroundColor: Theme.of(context).colorScheme.onPrimary,
-      ),
-      body: Center(
-        child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-          Text('Welcome to', style: Theme.of(context).textTheme.bodyLarge),
-          Text('Patrol Assistant',
-              style: Theme.of(context).textTheme.headlineLarge),
-        ]),
-      ),
+      home: const HomeScreen(),
     );
   }
 }

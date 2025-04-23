@@ -33,13 +33,21 @@ class AppTextStyles {
   );
 }
 
-class AppThemes {
-  static ThemeData lightTheme = ThemeData(
-    primaryColor: AppColors.primary,
-    scaffoldBackgroundColor: AppColors.background,
-    errorColor: AppColors.error,
-    textTheme: const TextTheme(
-      titleLarge: AppTextStyles.title,
+class AppTheme {
+  static ThemeData get lightTheme => ThemeData(
+      useMaterial3: true,
+        primarySwatch: MaterialColor(
+        AppColors.primary.value,
+        <int, Color>{
+          50: AppColors.primary.withOpacity(0.1),
+          100: AppColors.primary.withOpacity(0.2),
+          200: AppColors.primary.withOpacity(0.3),
+        }),
+      scaffoldBackgroundColor: AppColors.background,
+      
+      colorScheme: ColorScheme.fromSeed(seedColor:AppColors.primary, error:AppColors.error),
+      textTheme: const TextTheme(
+          titleLarge: AppTextStyles.title,
       titleMedium: AppTextStyles.subtitle,
       bodyMedium: AppTextStyles.body,
       bodySmall: AppTextStyles.bodySmall,
@@ -54,10 +62,5 @@ class AppThemes {
         foregroundColor: Colors.white,
       ),
     ),
-        colorScheme: ColorScheme.fromSwatch().copyWith(
-          primary: AppColors.primary,
-          error: AppColors.error,
-          secondary: AppColors.primary
-        )
   );
 }
